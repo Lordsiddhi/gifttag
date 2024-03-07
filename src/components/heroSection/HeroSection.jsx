@@ -1,9 +1,9 @@
 const HeroSection = () => {
-    return (
-        <div>
-           <img className=" h-44 lg:h-full" src="../img/hero1.png" alt="" />
-        </div>
-    );
-}
+  return (
+    <div className="container mx-auto ">
+      <img className="w-full h-auto" src="../img/hero1.png" alt="" />
+    </div>
+  );
+};
 
 export default HeroSection;

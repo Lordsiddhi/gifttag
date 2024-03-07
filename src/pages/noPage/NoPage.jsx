@@ -1,9 +1,9 @@
 const NoPage = () => {
-    return (
-        <div>
-            No Page
-        </div>
-    );
-}
+  return (
+    <div className="h-screen flex items-center justify-center text-7xl">
+      404 Page Not Found
+    </div>
+  );
+};
 
 export default NoPage;
