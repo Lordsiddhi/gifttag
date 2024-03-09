@@ -6,15 +6,16 @@ import Testimonial from "../../components/testimonial/Testimonial";
 import Track from "../../components/track/Track";
 
 const HomePage = () => {
-    return (
-        <Layout>
-            <HeroSection/>
-            <Category/>
-            <HomePageProductCard/>
-            <Track/>
-            <Testimonial/>
-        </Layout>
-    );
-}
+  return (
+    <Layout>
+      <HeroSection />
+      {/* <Category />
+      <HomePageProductCard />
+      
+      <Track />
+      <Testimonial /> */}
+    </Layout>
+  );
+};
 
 export default HomePage;

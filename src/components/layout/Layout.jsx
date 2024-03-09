@@ -4,11 +4,13 @@ import Navbar from "../navbar/Navbar";
 /* eslint-disable react/prop-types */
 const Layout = ({ children }) => {
   return (
-    <div>
+    <>
       <Navbar />
-      <div className="main-content min-h-screen">{children}</div>
+      <div className="">
+        <div className="main-content min-h-screen">{children}</div>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
