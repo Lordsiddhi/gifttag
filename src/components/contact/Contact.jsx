@@ -27,7 +27,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full xl:w-[70%]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.732124656201!2d72.96360377596027!3d19.20689894784869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b914ef3655b1%3A0x86eda0977cbebebc!2sSinghania%20School%20Rd%2C%20J%20K%20Gram%2C%20Thane%20West%2C%20Thane%2C%20Maharashtra%20400606!5e0!3m2!1sen!2sin!4v1710059299095!5m2!1sen!2sin"
             width="100%"

@@ -1,8 +1,10 @@
+import { Button } from "@material-tailwind/react";
 import { doc, getDoc } from "firebase/firestore";
+import { Trash2 } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Layout from "../../components/layout/Layout";
 import Loader from "../../components/loader/Loader";
 import myContext from "../../context/myContext";
@@ -12,6 +14,7 @@ import { addToCart, deleteFromCart } from "../../redux/cartSlice";
 const ProductInfo = () => {
   const context = useContext(myContext);
   const { loading, setLoading } = context;
+  const navigate = useNavigate();
 
   const [product, setProduct] = useState("");
   // console.log(product)
@@ -38,9 +41,13 @@ const ProductInfo = () => {
   const dispatch = useDispatch();
 
   const addCart = (item) => {
-    // console.log(item)
-    dispatch(addToCart(item));
-    toast.success("Add to cart");
+    if (localStorage.getItem("users") === null) {
+      toast.error("Please login to add items.");
+      navigate("/login");
+    } else {
+      dispatch(addToCart(item));
+      toast.success("Item Added");
+    }
   };
 
   const deleteCart = (item) => {
@@ -104,17 +111,19 @@ const ProductInfo = () => {
                       {cartItems.some((p) => p.id === product.id) ? (
                         <button
                           onClick={() => deleteCart(product)}
-                          className="w-full px-4 py-3 text-center text-white bg-red-500 border border--600  hover:bg-red-600 hover:text-gray-100  rounded-xl"
+                          className="w-full px-4 py-3 text-center text-white bg-red-900 border border--600 flex flex-row items-center gap-x-2 justify-center hover:bg-red-900/80 hover:text-gray-100  rounded-xl"
                         >
-                          Delete to cart
+                          <Trash2 className="size-5" />
+                          Delete from cart
                         </button>
                       ) : (
-                        <button
+                        <Button
+                          size="lg"
                           onClick={() => addCart(product)}
-                          className="w-full px-4 py-3 text-center text-pink-600 bg-pink-100 border border-pink-600  hover:bg-pink-600 hover:text-gray-100  rounded-xl"
+                          className="w-full px-4 py-3 text-center  border rounded-xl"
                         >
                           Add to cart
-                        </button>
+                        </Button>
                       )}
                     </div>
                   </div>

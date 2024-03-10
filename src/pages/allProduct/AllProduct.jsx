@@ -1,3 +1,4 @@
+import { Trash2 } from "lucide-react";
 import { useContext, useEffect } from "react";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -77,14 +78,15 @@ const AllProduct = () => {
                           {cartItems.some((p) => p.id === item.id) ? (
                             <button
                               onClick={() => deleteCart(item)}
-                              className=" bg-red-700 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
+                              className=" bg-red-900 flex flex-row items-center justify-center gap-x-2 w-full text-white py-[4px] rounded-lg font-bold"
                             >
+                              <Trash2 className="size-5" />
                               Delete From Cart
                             </button>
                           ) : (
                             <button
                               onClick={() => addCart(item)}
-                              className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
+                              className="bg-black w-full text-white py-[4px] rounded-lg font-bold"
                             >
                               Add To Cart
                             </button>

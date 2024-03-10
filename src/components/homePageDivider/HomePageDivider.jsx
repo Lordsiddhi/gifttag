@@ -27,7 +27,7 @@ const HomePageDivider = () => {
   return (
     <div className="bg-[#001219] text-white my-12">
       <div className="container mx-auto">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-2 p-12">
+        <div className="grid grid-cols-2  lg:grid-cols-4 md:grid-cols-2 gap-2 p-12">
           {clientDetails.map((item) => {
             return (
               <div
@@ -37,7 +37,9 @@ const HomePageDivider = () => {
                 <span className="text-base md:text-xl font-bold">
                   {item.number}
                 </span>
-                <span className="text-gray-400">{item.details}</span>
+                <span className="text-gray-400 text-xs sm:text-base">
+                  {item.details}
+                </span>
               </div>
             );
           })}

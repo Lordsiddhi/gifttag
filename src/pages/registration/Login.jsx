@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Button } from "@material-tailwind/react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useContext, useState } from "react";
@@ -38,43 +39,45 @@ const Login = () => {
 
   const userLoginFunction = async () => {
     // validation
-    if (userLogin.email === "" || userLogin.password === "") {
-      toast.error("All Fields are required");
-    }
 
-    setLoading(true);
     try {
-      const users = await signInWithEmailAndPassword(
-        auth,
-        userLogin.email,
-        userLogin.password
-      );
-      // console.log(users.user)
-
-      try {
-        const q = query(
-          collection(fireDB, "user"),
-          where("uid", "==", users?.user?.uid)
-        );
-        const data = onSnapshot(q, (QuerySnapshot) => {
-          let user;
-          QuerySnapshot.forEach((doc) => (user = doc.data()));
-          localStorage.setItem("users", JSON.stringify(user));
-          setUserLogin({
-            email: "",
-            password: "",
-          });
-          toast.success("Login Successful");
-          setLoading(false);
-          if (user.role === "user") {
-            navigate("/user-dashboard");
-          } else {
-            navigate("/admin-dashboard");
-          }
-        });
-        return () => data;
-      } catch (error) {
+      if (userLogin.email === "" || userLogin.password === "") {
+        toast.error("All Fields are required");
         setLoading(false);
+      } else {
+        setLoading(true);
+        const users = await signInWithEmailAndPassword(
+          auth,
+          userLogin.email,
+          userLogin.password
+        );
+        // console.log(users.user)
+
+        try {
+          const q = query(
+            collection(fireDB, "user"),
+            where("uid", "==", users?.user?.uid)
+          );
+          const data = onSnapshot(q, (QuerySnapshot) => {
+            let user;
+            QuerySnapshot.forEach((doc) => (user = doc.data()));
+            localStorage.setItem("users", JSON.stringify(user));
+            setUserLogin({
+              email: "",
+              password: "",
+            });
+            toast.success("Login Successful");
+            setLoading(false);
+            if (user.role === "user") {
+              navigate("/user-dashboard");
+            } else {
+              navigate("/admin-dashboard");
+            }
+          });
+          return () => data;
+        } catch (error) {
+          setLoading(false);
+        }
       }
     } catch (error) {
       setLoading(false);
@@ -137,13 +140,14 @@ const Login = () => {
 
         {/* Signup Button  */}
         <div className="mb-5">
-          <button
+          <Button
+            size="lg"
             type="button"
             onClick={userLoginFunction}
             className="0  w-full text-white text-center py-2 font-bold rounded-md bg-primary"
           >
             Login
-          </button>
+          </Button>
         </div>
 
         <div>

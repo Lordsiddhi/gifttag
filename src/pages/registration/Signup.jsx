@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Button } from "@material-tailwind/react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { useContext, useState } from "react";
@@ -39,51 +40,52 @@ const Signup = () => {
 
   const userSignupFunction = async () => {
     // validation
-    if (
-      userSignup.name === "" ||
-      userSignup.email === "" ||
-      userSignup.password === ""
-    ) {
-      toast.error("All Fields are required");
-    }
-
-    setLoading(true);
     try {
-      const users = await createUserWithEmailAndPassword(
-        auth,
-        userSignup.email,
-        userSignup.password
-      );
+      if (
+        userSignup.name === "" ||
+        userSignup.email === "" ||
+        userSignup.password === ""
+      ) {
+        toast.error("All Fields are required");
+        setLoading(false);
+      } else {
+        setLoading(true);
+        const users = await create2AUserWithEmailAndPassword(
+          auth,
+          userSignup.email,
+          userSignup.password
+        );
 
-      // create user object
-      const user = {
-        name: userSignup.name,
-        email: users.user.email,
-        uid: users.user.uid,
-        role: userSignup.role,
-        time: Timestamp.now(),
-        date: new Date().toLocaleString("en-US", {
-          month: "short",
-          day: "2-digit",
-          year: "numeric",
-        }),
-      };
+        // create user object
+        const user = {
+          name: userSignup.name,
+          email: users.user.email,
+          uid: users.user.uid,
+          role: userSignup.role,
+          time: Timestamp.now(),
+          date: new Date().toLocaleString("en-US", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric",
+          }),
+        };
 
-      // create user Refrence
-      const userRefrence = collection(fireDB, "user");
+        // create user Refrence
+        const userRefrence = collection(fireDB, "user");
 
-      // Add User Detail
-      addDoc(userRefrence, user);
+        // Add User Detail
+        addDoc(userRefrence, user);
 
-      setUserSignup({
-        name: "",
-        email: "",
-        password: "",
-      });
+        setUserSignup({
+          name: "",
+          email: "",
+          password: "",
+        });
 
-      toast.success("Signup Successfully");
-      setLoading(false);
-      navigate("/login");
+        toast.success("Signup Successfully");
+        setLoading(false);
+        navigate("/login");
+      }
     } catch (error) {
       setLoading(false);
       toast.error(removePrefixAndCapitalize(error.code, "auth/"));
@@ -160,13 +162,14 @@ const Signup = () => {
 
         {/* Signup Button  */}
         <div className="mb-5">
-          <button
+          <Button
+            size="lg"
             type="button"
             onClick={userSignupFunction}
             className="0 bg-primary text-white  w-full text-center py-2 font-bold rounded-md "
           >
             Signup
-          </button>
+          </Button>
         </div>
 
         <div>

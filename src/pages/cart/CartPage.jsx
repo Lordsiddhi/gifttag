@@ -1,3 +1,4 @@
+import { Button } from "@material-tailwind/react";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { Trash } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -95,7 +96,7 @@ const CartPage = () => {
         pincode: "",
         mobileNumber: "",
       });
-      toast.success("Order Placed Successfull");
+      toast.success("Order Placed Successfully");
     } catch (error) {
       console.log(error);
     }
@@ -202,7 +203,7 @@ const CartPage = () => {
                     })}
                   </>
                 ) : (
-                  <h1>Not Found</h1>
+                  <h1>Cart is Empty...</h1>
                 )}
               </ul>
             </section>
@@ -244,14 +245,16 @@ const CartPage = () => {
                 </dl>
                 <div className="px-2 pb-4 font-medium text-green-700">
                   <div className="flex gap-4 mb-6">
-                    {user ? (
+                    {user && cartItems.length > 0 ? (
                       <BuyNowModal
                         addressInfo={addressInfo}
                         setAddressInfo={setAddressInfo}
                         buyNowFunction={buyNowFunction}
                       />
                     ) : (
-                      <Navigate to={"/login"} />
+                      <Button className="bg-gray-500 cursor-not-allowed w-full">
+                        Buy Now
+                      </Button>
                     )}
                   </div>
                 </div>
