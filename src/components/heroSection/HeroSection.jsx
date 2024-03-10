@@ -24,7 +24,7 @@ const HeroSection = () => {
           </Link>
         </div>
         <div>
-          <img className="w-full h-auto" src="../img/hero.png" alt="" />
+          <img className="w-full" src="../img/hero.png" alt="" />
         </div>
       </div>
     </div>

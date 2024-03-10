@@ -17,9 +17,13 @@ const AllProduct = () => {
   const dispatch = useDispatch();
 
   const addCart = (item) => {
-    // console.log(item)
-    dispatch(addToCart(item));
-    toast.success("Item Added");
+    if (localStorage.getItem("users") === null) {
+      toast.error("Please login to add items.");
+      navigate("/login");
+    } else {
+      dispatch(addToCart(item));
+      toast.success("Item Added");
+    }
   };
 
   const deleteCart = (item) => {
@@ -50,17 +54,17 @@ const AllProduct = () => {
               {getAllProduct.map((item, index) => {
                 const { id, title, price, productImageUrl } = item;
                 return (
-                  <div key={index} className="p-4 w-full md:w-1/4">
-                    <div className="h-full border border-gray-300 rounded-xl overflow-hidden shadow-md cursor-pointer">
+                  <div key={index} className="p-4 w-full md:w-2/4 lg:w-1/4">
+                    <div className="h-full border border-gray-300 rounded-xl overflow-hidden hover:shadow-md ">
                       <img
                         onClick={() => navigate(`/productinfo/${id}`)}
-                        className="lg:h-80  h-96 w-full object-cover"
+                        className="lg:h-80  h-96 w-full object-cover cursor-pointer"
                         src={productImageUrl}
                         alt="blog"
                       />
                       <div className="p-6">
                         <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                          E-bharat
+                          Gift Tag
                         </h2>
                         <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                           {title.substring(0, 25)}
