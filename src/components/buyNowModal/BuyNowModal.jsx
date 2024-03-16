@@ -29,7 +29,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                 });
               }}
               placeholder="Enter your name"
-              className=" border  px-2 py-2 w-full rounded-md outline-none "
+              className=" border text-black px-2 py-2 w-full rounded-md outline-none "
             />
           </div>
           <div className="mb-3">
@@ -44,7 +44,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                 });
               }}
               placeholder="Enter your address"
-              className=" border  px-2 py-2 w-full rounded-md outline-none "
+              className=" border text-black px-2 py-2 w-full rounded-md outline-none "
             />
           </div>
 
@@ -60,7 +60,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                 });
               }}
               placeholder="Enter your pincode"
-              className=" border  px-2 py-2 w-full rounded-md outline-none "
+              className=" border text-black px-2 py-2 w-full rounded-md outline-none "
             />
           </div>
 
@@ -76,7 +76,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                 });
               }}
               placeholder="Enter your mobileNumber"
-              className=" border  px-2 py-2 w-full rounded-md outline-none "
+              className=" border text-black px-2 py-2 w-full rounded-md outline-none "
             />
           </div>
 
