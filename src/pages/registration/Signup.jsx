@@ -50,7 +50,7 @@ const Signup = () => {
         setLoading(false);
       } else {
         setLoading(true);
-        const users = await create2AUserWithEmailAndPassword(
+        const users = await createUserWithEmailAndPassword(
           auth,
           userSignup.email,
           userSignup.password
