@@ -115,3 +115,20 @@ Click on the Create Database button
 
 
 ![image](https://github.com/Prathamesh-technosive/Siddhi-Gift-Shop/assets/79010748/7561600a-df9d-47fc-8368-a14c38d82930)
+
+
+## Testing
+
+- Now try testing the application by signing up an user from signup page
+- After Creating the user Check your Firestore Database you will the get the users
+![image](https://github.com/Prathamesh-technosive/Siddhi-Gift-Shop/assets/79010748/1620fe8b-233a-455f-a3ea-b715cc6d97c7)
+- By default the every account will have the role of 'user'. If you want to make any specifc user an admin then you can
+- Double Click on the role and change role from user to 'admin'.
+
+![image](https://github.com/Prathamesh-technosive/Siddhi-Gift-Shop/assets/79010748/8a31207d-0160-437c-8705-2854960eeb16)
+
+
+
+#### Similarly Product's Database also stored in this Firestore Database 
+
+
