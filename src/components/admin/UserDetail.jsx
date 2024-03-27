@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import myContext from "../../context/myContext";
 
 const UserDetail = () => {
@@ -71,7 +72,13 @@ const UserDetail = () => {
                     </td>
 
                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 stroke-slate-500 text-slate-500 cursor-pointer ">
-                      {value.email}
+                      <Link
+                        to={`mailto:${value.email}`}
+                        target="_blank"
+                        className="text-blue-800 underline"
+                      >
+                        {value.email}
+                      </Link>
                     </td>
 
                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 stroke-slate-500 text-slate-500  cursor-pointer ">

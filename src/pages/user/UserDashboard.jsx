@@ -18,13 +18,24 @@ const UserDashboard = () => {
         <div className=" container mx-auto px-4 py-5 lg:py-8">
           {/* Top  */}
           <div className="top ">
+            {/* Top */}
+            <div className="top mb-5 px-5 mt-5">
+              <div className=" py-5 border  rounded-lg">
+                <h1 className="text-center text-2xl font-bold ">
+                  <span>User Dashboard</span>
+                </h1>
+              </div>
+            </div>
+
             {/* main  */}
-            <div className="  py-5 rounded-xl border ">
+            <div className="py-5 rounded-xl border ">
               {/* image  */}
               <div className="flex justify-center">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/2202/2202112.png"
+                  src="https://i.redd.it/9dcbce54dz281.jpg"
                   alt=""
+                  width={100}
+                  className="rounded-full"
                 />
               </div>
               {/* text  */}

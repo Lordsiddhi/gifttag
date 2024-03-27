@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react';
-import MyContext from './myContext';
 import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
-import { fireDB } from '../firebase/FirebaseConfig';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { fireDB } from '../firebase/FirebaseConfig';
+import MyContext from './myContext';
 
 function MyState({ children }) {
     // Loading State 

@@ -34,8 +34,10 @@ const AdminDashboard = () => {
                 {/* image  */}
                 <div className="flex justify-center">
                   <img
-                    src="https://cdn-icons-png.flaticon.com/128/2202/2202112.png"
+                    src="https://assets-global.website-files.com/63851d467dc151a9f46a992b/638630e705534b463196f6f8_62b46638bedf9aabc6b3c121_Walter%2520white.jpeg"
                     alt=""
+                    width={100}
+                    className="rounded-full"
                   />
                 </div>
                 {/* text  */}

@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import myContext from "../../context/myContext";
 
 const OrderDetail = () => {
@@ -131,7 +132,6 @@ const OrderDetail = () => {
                 </th>
               </tr>
               {getAllOrder.map((order) => {
-                console.log(order);
                 return (
                   <>
                     {order.cartItems.map((item, index) => {
@@ -198,7 +198,13 @@ const OrderDetail = () => {
                           </td>
 
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0  stroke-slate-500 text-slate-500 ">
-                            {order.email}
+                            <Link
+                              to={`mailto:${order.email}`}
+                              target="_blank"
+                              className="text-blue-800 underline"
+                            >
+                              {order.email}
+                            </Link>
                           </td>
 
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0  stroke-slate-500 text-slate-500 first-letter:uppercase ">
