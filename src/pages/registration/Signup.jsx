@@ -38,7 +38,8 @@ const Signup = () => {
    *                          User Signup Function
    *========================================================================**/
 
-  const userSignupFunction = async () => {
+  const userSignupFunction = async (e) => {
+    e.preventDefault();
     // validation
     try {
       if (
@@ -92,7 +93,7 @@ const Signup = () => {
     }
   };
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col px-4 justify-center items-center h-screen">
       {loading && <Loader />}
       <span className="mb-8 flex flex-row items-center justify-center text-primary gap-x-2 font-bold text-3xl">
         <svg
@@ -106,7 +107,10 @@ const Signup = () => {
         Gift Tag
       </span>
       {/* Login Form  */}
-      <div className="login_Form  px-8 py-6 border rounded-xl shadow-md">
+      <form
+        className="login_Form w-full sm:max-w-xl px-8 py-6 border rounded-xl shadow-md"
+        onSubmit={userSignupFunction}
+      >
         {/* Top Heading  */}
         <div className="mb-5">
           <h2 className="text-center text-2xl font-bold  ">Signup</h2>
@@ -124,7 +128,7 @@ const Signup = () => {
                 name: e.target.value,
               });
             }}
-            className=" border  px-2 py-2 w-96 rounded-md outline-none "
+            className=" border w-full px-2 py-2 rounded-md outline-none "
           />
         </div>
 
@@ -140,7 +144,7 @@ const Signup = () => {
                 email: e.target.value,
               });
             }}
-            className=" border  px-2 py-2 w-96 rounded-md outline-none "
+            className=" border w-full px-2 py-2  rounded-md outline-none "
           />
         </div>
 
@@ -156,7 +160,7 @@ const Signup = () => {
                 password: e.target.value,
               });
             }}
-            className=" border  px-2 py-2 w-96 rounded-md outline-none "
+            className=" border w-full px-2 py-2 rounded-md outline-none "
           />
         </div>
 
@@ -164,8 +168,7 @@ const Signup = () => {
         <div className="mb-5">
           <Button
             size="lg"
-            type="button"
-            onClick={userSignupFunction}
+            type="submit"
             className="0 bg-primary text-white  w-full text-center py-2 font-bold rounded-md "
           >
             Signup
@@ -180,7 +183,7 @@ const Signup = () => {
             </Link>
           </h2>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

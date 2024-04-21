@@ -1,5 +1,6 @@
 import {
   Button,
+  Collapse,
   IconButton,
   MobileNav,
   Navbar,
@@ -173,7 +174,7 @@ const StickyNavbar = () => {
             </IconButton>
           </div>
         </div>
-        <MobileNav open={openNav}>
+        <Collapse open={openNav}>
           {navList}
           <div className="flex flex-col items-center justify-center w-full">
             {user ? (
@@ -231,7 +232,7 @@ const StickyNavbar = () => {
               </Link>
             )}
           </div>
-        </MobileNav>
+        </Collapse>
       </Navbar>
     </div>
   );

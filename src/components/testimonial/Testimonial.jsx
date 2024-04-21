@@ -5,20 +5,20 @@ const Testimonial = () => {
     {
       id: 1,
       description:
-        "I love the fitness apparel and gear I purchased from this site. The quality is exceptional and the prices are unbeatable.",
-      author: "Sheryl Berge",
+        "Thanks again, and thank you for your attentive, engaged, and engaging customer service - it is truly a pleasure!",
+      author: "Bhupendar Jogi",
     },
     {
       id: 2,
       description:
-        "I love the fitness apparel and gear I purchased from this site. The quality is exceptional and the prices are unbeatable.",
-      author: "Sheryl Berge",
+        "I love the anime figures,  beautiful colour and style. So well made and so happy that buying it is making a difference.",
+      author: "Saima Sharma",
     },
     {
       id: 3,
       description:
-        "I love the fitness apparel and gear I purchased from this site. The quality is exceptional and the prices are unbeatable.",
-      author: "Sheryl Berge",
+        "Thank you for the awesome customer service - I will be sure to look to you first for future purchases.",
+      author: "Nikit Goel",
     },
   ];
 
@@ -63,7 +63,7 @@ const Testimonial = () => {
                       </blockquote>
                       <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
                         <div>
-                          <div className="font-display text-base text-slate-900">
+                          <div className="font-display text-base text-slate-900 font-bold">
                             {item.author}
                           </div>
                         </div>

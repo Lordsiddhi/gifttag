@@ -21,13 +21,6 @@ const OrderDetail = () => {
               <tr>
                 <th
                   scope="col"
-                  className="h-12 px-6 text-md border-l first:border-l-0  text-slate-700 bg-slate-100 font-bold fontPara"
-                >
-                  S.No.
-                </th>
-
-                <th
-                  scope="col"
                   className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0  text-slate-700 bg-slate-100"
                 >
                   Order Id
@@ -134,7 +127,8 @@ const OrderDetail = () => {
               {getAllOrder.map((order) => {
                 return (
                   <>
-                    {order.cartItems.map((item, index) => {
+                    {order.cartItems.toReversed().map((item, index) => {
+                      console.log(index);
                       const {
                         id,
                         productImageUrl,
@@ -145,10 +139,6 @@ const OrderDetail = () => {
                       } = item;
                       return (
                         <tr key={index} className="">
-                          <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0  stroke-slate-500 text-slate-500 ">
-                            {index + 1}
-                          </td>
-
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0  stroke-slate-500 text-slate-500 ">
                             {id}
                           </td>

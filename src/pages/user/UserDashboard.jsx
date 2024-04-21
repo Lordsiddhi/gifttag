@@ -22,7 +22,7 @@ const UserDashboard = () => {
             <div className="top mb-5 px-5 mt-5">
               <div className=" py-5 border  rounded-lg">
                 <h1 className="text-center text-2xl font-bold ">
-                  <span>User Dashboard</span>
+                  <span className="uppercase">User Dashboard</span>
                 </h1>
               </div>
             </div>
@@ -54,7 +54,7 @@ const UserDashboard = () => {
 
                 {/* Date  */}
                 <h1 className=" text-center text-lg">
-                  <span className=" font-bold">Date : </span>
+                  <span className=" font-bold">Date Joined : </span>
                   {user?.date}
                 </h1>
 
@@ -117,7 +117,7 @@ const UserDashboard = () => {
                                         #{id}
                                       </div>
                                     </div>
-
+                                    {/* 
                                     <div className="mb-4">
                                       <div className="text-sm font-semibold">
                                         Date
@@ -125,7 +125,7 @@ const UserDashboard = () => {
                                       <div className="text-sm font-medium text-gray-900">
                                         {date}
                                       </div>
-                                    </div>
+                                    </div> */}
 
                                     <div className="mb-4">
                                       <div className="text-sm font-semibold">

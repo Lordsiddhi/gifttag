@@ -9,28 +9,28 @@ import { fireDB } from "../../firebase/FirebaseConfig";
 
 const categoryList = [
   {
-    name: "fashion",
+    name: "Fashion & Beauty",
   },
   {
-    name: "shirt",
+    name: "Soft Toys",
   },
   {
-    name: "jacket",
+    name: "Accessories",
   },
   {
-    name: "mobile",
+    name: "Bags",
   },
   {
-    name: "laptop",
+    name: "Decor",
   },
   {
-    name: "shoes",
+    name: "School essentials",
   },
   {
-    name: "home",
+    name: "Games",
   },
   {
-    name: "books",
+    name: "Books",
   },
 ];
 

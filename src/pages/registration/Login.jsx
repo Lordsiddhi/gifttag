@@ -37,7 +37,9 @@ const Login = () => {
    *                          User Login Function
    *========================================================================**/
 
-  const userLoginFunction = async () => {
+  const userLoginFunction = async (e) => {
+    e.preventDefault();
+
     // validation
 
     try {
@@ -85,7 +87,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col px-4 justify-center items-center h-screen">
       <span className="mb-8 flex flex-row items-center justify-center text-primary gap-x-2 font-bold text-3xl">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +101,10 @@ const Login = () => {
       </span>
       {loading && <Loader />}
       {/* Login Form  */}
-      <div className="login_Form  px-8 py-6 border  rounded-xl shadow-md">
+      <form
+        className="login_Form w-full sm:max-w-xl px-8 py-6 border  rounded-xl shadow-md"
+        onSubmit={userLoginFunction}
+      >
         {/* Top Heading  */}
         <div className="mb-5">
           <h2 className="text-center text-2xl font-bold ">Login</h2>
@@ -118,7 +123,7 @@ const Login = () => {
                 email: e.target.value,
               });
             }}
-            className=" border  px-2 py-2 w-96 rounded-md outline-none "
+            className=" border  px-2 py-2 w-full rounded-md outline-none "
           />
         </div>
 
@@ -134,7 +139,7 @@ const Login = () => {
                 password: e.target.value,
               });
             }}
-            className=" border  px-2 py-2 w-96 rounded-md outline-none "
+            className=" border  px-2 py-2 w-full rounded-md outline-none "
           />
         </div>
 
@@ -142,8 +147,7 @@ const Login = () => {
         <div className="mb-5">
           <Button
             size="lg"
-            type="button"
-            onClick={userLoginFunction}
+            type="submit"
             className="0  w-full text-white text-center py-2 font-bold rounded-md bg-primary"
           >
             Login
@@ -158,7 +162,7 @@ const Login = () => {
             </Link>
           </h2>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

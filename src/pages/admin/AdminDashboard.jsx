@@ -21,7 +21,7 @@ const AdminDashboard = () => {
           <div className="top mb-5 px-5 mt-5">
             <div className=" py-5 border  rounded-lg">
               <h1 className="text-center text-2xl font-bold ">
-                <span>Admin Dashboard</span>
+                <span className="uppercase">Admin Dashboard</span>
               </h1>
             </div>
           </div>
@@ -56,7 +56,7 @@ const AdminDashboard = () => {
 
                   {/* Date  */}
                   <h1 className=" text-center text-lg">
-                    <span className=" font-bold">Date : </span>
+                    <span className=" font-bold">Date Joined : </span>
                     {user?.date}
                   </h1>
 
